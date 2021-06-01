@@ -1,7 +1,13 @@
 # DependencyRecovery
 Python script to help with architectural recovery. 
+So far only works on python projects.
 
-To run, replace the  "ZEEGUU_FOLDER1" on line 13 of main.py, with the path to the project to be analyzed.
-Replace "level_to_draw" on line 249 with the desired level of abstraction. Abstraction level = depth of folder structure.
+## DependencyRecovery
+The scripts runs through every .py file in the project and saves their dependencies as JSON files.
+The script takes three arguments. First being the root folder of the project thhe analyze. Second being where to save the files information. Last is where to save the modules information.
+python DependencyRecovery.py PathToProject PathToFilesDump PathToModulesDump  
 
-The analyze algorithms are horrible slow, so results can be saved as JSON by commenting and out-commenting the code in lines 176 - 207. Just replace the paths at line 14 and 15 to the desired location of the JSON dumps.
+## DependencyVisualization
+The script visualizes the data gathered from DependencyRecovery.
+The script takes three arguments. First being the path the the files information. Second being the path to the modules information. Third is the level of abstraction (This is very janky and keeping it at 0 is adviced)
+python DependencyVisualization.py PathToFilesDump PathToModulesDump Level
